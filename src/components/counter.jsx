@@ -7,8 +7,9 @@ class Counter extends Component {
       
     
     };
-    handleOnIncrement() {
-        console.log("Clicked");
+   handleOnIncrement = (product)=> {
+    console.log(product);
+        this.setState ({count: this.state.count + 1})
         };
     render() { 
 
@@ -17,12 +18,12 @@ class Counter extends Component {
         return (
         <div>
             <span className= {this.getBgClasses()}>{this.formatCount()}</span>
-            <button onClick={this.handleOnIncrement} className='btn btn-success'>Increment</button>
+            <button onClick={() => this.handleOnIncrement(product)} className='btn btn-success'>Increment</button>
         </div>
         );
     }
     getBgClasses() {
-        let classes = "bg m-2 rounded bg-";
+        let classes = "bg m-2 rounded fw-bold bg-";
         classes += this.state.count === 0 ? "warning" : "primary";
         return classes;
     }
