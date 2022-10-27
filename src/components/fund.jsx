@@ -44,3 +44,38 @@ import { useState } from "react";
 function KeepCount() {
   const [count, setCount] = useState(0);
 }
+
+
+// What do you need to add to the second argument of a useEffect Hook to limit it to running only on the first render?
+
+
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(getData())
+  }, []);
+
+  return <DisplayData data={data} />;
+}
+
+const root2 = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+
+// Add the following CSS styles inline to the <h1> element
+
+// background-color = "yellow"
+
+
+const Header = () => {
+  return (
+    <>
+      <h1 style={{backgroundColor: "yellow"}}>Hello Style!</h1>
+      <p>Add a little style!</p>
+    </>
+  );
+};
